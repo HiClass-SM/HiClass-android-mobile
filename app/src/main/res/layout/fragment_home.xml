@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/orange"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+            <!--            <ImageView-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:src="@drawable/menu" />-->
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="90dp"
+                android:src="@drawable/logo_white3" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <!--            <ImageView-->
+            <!--                android:layout_width="43dp"-->
+            <!--                android:layout_height="43dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:src="@drawable/menu_class" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/orange"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/children" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="50dp"
+                android:background="@drawable/home_layout"
+                android:orientation="vertical">
+                <!--                        <LinearLayout-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_marginLeft="50dp"-->
+                <!--                            android:layout_marginTop="80dp"-->
+                <!--                            android:orientation="horizontal">-->
+                <!--                            <TextView-->
+                <!--                                android:layout_width="100dp"-->
+                <!--                                android:layout_height="50dp"-->
+                <!--                                android:layout_gravity="center"-->
+                <!--                                android:gravity="center"-->
+                <!--                                android:text="방 이름"/>-->
+                <!--                            <EditText-->
+                <!--                                android:layout_width="160dp"-->
+                <!--                                android:layout_height="50dp"/>-->
+                <!--                        </LinearLayout>-->
+                <!--                        <LinearLayout-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_marginLeft="50dp"-->
+                <!--                            android:orientation="horizontal">-->
+                <!--                            <TextView-->
+                <!--                                android:layout_width="100dp"-->
+                <!--                                android:layout_height="50dp"-->
+                <!--                                android:layout_gravity="center"-->
+                <!--                                android:gravity="center"-->
+                <!--                                android:text="방 비밀번호"/>-->
+                <!--                            <EditText-->
+                <!--                                android:layout_width="160dp"-->
+                <!--                                android:layout_height="50dp" />-->
+                <!--                        </LinearLayout>-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="수업 입장"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:text="수업 이름"
+                            android:paddingLeft="5dp"
+                            android:textSize="13dp" />
+
+                        <EditText
+                            android:id="@+id/edit_class_name"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center"
+                            android:background="@drawable/edittext_layout2"
+                            android:paddingHorizontal="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:paddingLeft="5dp"
+                            android:gravity="center_vertical"
+                            android:text="수업 비밀번호"
+                            android:textSize="13dp" />
+
+                        <EditText
+                            android:id="@+id/edit_class_password"
+                            android:layout_width="0dp"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:background="@drawable/edittext_layout2"
+                            android:paddingHorizontal="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_enter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:background="@drawable/button_layout_orange"
+                            android:scaleType="center"
+                            android:text="입장"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

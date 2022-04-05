@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/orange"
+    tools:context=".RoomCamera">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp">
+        <!--            <ImageView-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:src="@drawable/menu" />-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_pencil" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_height="match_parent">
+
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:id="@+id/room_secondrocket_lottie"-->
+<!--            app:lottie_autoPlay="true"-->
+<!--            app:lottie_rawRes="@raw/countdown"-->
+<!--            app:lottie_loop="true"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+
+
+        <SurfaceView
+            android:id="@+id/sv_viewFinder"
+            android:layout_width="340dp"
+            android:layout_height="530dp"
+            android:layout_gravity="center_horizontal" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/room_countlottie"
+            android:layout_marginTop="5dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:lottie_rawRes="@raw/countdown"
+            android:layout_gravity="center_horizontal"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="true"/>
+        <Button
+            android:layout_marginTop="2dp"
+            android:id="@+id/btn_shutter"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/shutter"
+            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:background="#00ff0000"
+                android:id="@+id/btn_again"
+                android:text="재촬영"
+                android:textSize="17dp" />
+            <Button
+                android:layout_weight="1"
+                android:background="#00ff0000"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="17dp"
+                android:textColor="#ffffff"
+                android:id="@+id/btn_next"
+                android:text="확인" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="250dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</LinearLayout>
