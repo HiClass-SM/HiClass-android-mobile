@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.paasta.hiclass.databinding.ActivityLoginBinding
 import com.paasta.hiclass.databinding.ActivitySettingCameraBinding
-import kotlinx.android.synthetic.main.activity_test.*
+//import kotlinx.android.synthetic.main.activity_test.*
 import org.json.JSONObject
 
 class SettingCameraActivity : AppCompatActivity() {
