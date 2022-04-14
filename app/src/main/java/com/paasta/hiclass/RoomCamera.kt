@@ -311,32 +311,35 @@ class RoomCamera : AppCompatActivity() {
         }
     }
     fun checkimage(item: MultipartBody.Part) {
-
+        val sucessintent = Intent(applicationContext, FaceRecognitionActivity::class.java)
+        sucessintent.putExtra("result", 'a')
+        sucessintent.putExtra("roomname", 'a')
+        startActivity(sucessintent)
         Log.d("확인", item.toString())
-        RetrofitClient.retrofitservice.requestCheckImage(item).enqueue(object : Callback<String> {
-            override fun onFailure(call: Call<String>, t: Throwable) {
-                Toast.makeText(
-                    applicationContext,
-                    "통신 실패"+t.message,
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                val body = response.body()
-                Log.d("사진 본인확인",body.toString())
-
-
-                if (body != null) {
-                    //학번 이름 일치
-                    val sucessintent = Intent(applicationContext, FaceRecognitionActivity::class.java)
-                    sucessintent.putExtra("result", body)
-                    sucessintent.putExtra("roomname", roomname)
-                    startActivity(sucessintent)
-
-                }else {
-                    Toast.makeText(applicationContext, "실패"+response.body(), Toast.LENGTH_LONG).show()
-                }
-            }
-        })
+//        RetrofitClient.retrofitservice.requestCheckImage(item).enqueue(object : Callback<String> {
+//            override fun onFailure(call: Call<String>, t: Throwable) {
+//                Toast.makeText(
+//                    applicationContext,
+//                    "통신 실패"+t.message,
+//                    Toast.LENGTH_LONG
+//                ).show()
+//            }
+//            override fun onResponse(call: Call<String>, response: Response<String>) {
+//                val body = response.body()
+//                Log.d("사진 본인확인",body.toString())
+//
+//
+//                if (body != null) {
+//                    //학번 이름 일치
+//                    val sucessintent = Intent(applicationContext, FaceRecognitionActivity::class.java)
+//                    sucessintent.putExtra("result", body)
+//                    sucessintent.putExtra("roomname", roomname)
+//                    startActivity(sucessintent)
+//
+//                }else {
+//                    Toast.makeText(applicationContext, "실패"+response.body(), Toast.LENGTH_LONG).show()
+//                }
+//            }
+//        })
     }
 }
