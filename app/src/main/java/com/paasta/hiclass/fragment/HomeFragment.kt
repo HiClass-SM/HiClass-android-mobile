@@ -63,34 +63,40 @@ class HomeFragment : Fragment() {
     }
 
     fun enterroom(roomname: String, password: String) {
-        RetrofitClient.retrofitservice.requestEnterRoom(roomname, password)
-            .enqueue(object :
-                retrofit2.Callback<String> {
-                override fun onFailure(call: Call<String>, t: Throwable) {
-                    Toast.makeText(getActivity(), "전송 실패"+t.message, Toast.LENGTH_LONG).show()
-                }
-                override fun onResponse(call: Call<String>, response: Response<String>) {
+        val args = Bundle()
+        args.putString("classname",roomname)
+        val attendanceDialog = AttendanceDialog()
+        attendanceDialog.setArguments(args)
+        getActivity()?.getSupportFragmentManager()?.let { it1 -> attendanceDialog.show(it1,"tag") }
 
-                    val body = response.body()
-                    Log.d("방입장", body.toString())
-
-                    if(body=="success") {
-                        Log.d("방입장!!!!!!!!!!",roomname)
-                        val args = Bundle()
-                        args.putString("classname",roomname)
-                        val attendanceDialog = AttendanceDialog()
-                        attendanceDialog.setArguments(args)
-                        getActivity()?.getSupportFragmentManager()?.let { it1 -> attendanceDialog.show(it1,"tag") }
-                    }else if(body=="fail") {
-                        Toast.makeText(getActivity(), "방 비밀번호가 틀립니다.", Toast.LENGTH_LONG).show()
-                    }else if(body=="NoRoom") {
-                        Toast.makeText(getActivity(), "해당 방이 없습니다.", Toast.LENGTH_LONG).show()
-                    }else {
-                        Toast.makeText(getActivity(), "실패"+response.body(), Toast.LENGTH_LONG).show()
-                    }
-
-                }
-            })
+//        RetrofitClient.retrofitservice.requestEnterRoom(roomname, password)
+//            .enqueue(object :
+//                retrofit2.Callback<String> {
+//                override fun onFailure(call: Call<String>, t: Throwable) {
+//                    Toast.makeText(getActivity(), "전송 실패"+t.message, Toast.LENGTH_LONG).show()
+//                }
+//                override fun onResponse(call: Call<String>, response: Response<String>) {
+//
+//                    val body = response.body()
+//                    Log.d("방입장", body.toString())
+//
+//                    if(body=="success") {
+//                        Log.d("방입장!!!!!!!!!!",roomname)
+//                        val args = Bundle()
+//                        args.putString("classname",roomname)
+//                        val attendanceDialog = AttendanceDialog()
+//                        attendanceDialog.setArguments(args)
+//                        getActivity()?.getSupportFragmentManager()?.let { it1 -> attendanceDialog.show(it1,"tag") }
+//                    }else if(body=="fail") {
+//                        Toast.makeText(getActivity(), "방 비밀번호가 틀립니다.", Toast.LENGTH_LONG).show()
+//                    }else if(body=="NoRoom") {
+//                        Toast.makeText(getActivity(), "해당 방이 없습니다.", Toast.LENGTH_LONG).show()
+//                    }else {
+//                        Toast.makeText(getActivity(), "실패"+response.body(), Toast.LENGTH_LONG).show()
+//                    }
+//
+//                }
+//            })
     }
 
 }
